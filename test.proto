@@ -1,9 +1,9 @@
-syntax = "proto3";
+syntax = "proto2";
 
-package aix;
+package test;
 
 message TestMessage {
-  int32 id = 1;
-  repeated int32 test = 2;
-  string name = 3;
+  optional int32 id = 1;
+  repeated int32 bval = 2 [packed=true];
+  optional int64 value = 3;
 }

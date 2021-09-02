@@ -2,12 +2,13 @@
 #include <stdio.h>
 
 int main(int argc, char** argv) {
-  aix::TestMessage a;
-  a.add_test(1);
-  a.add_test(5);
-  a.add_test(10);
+  test::TestMessage a;
+  a.add_bval(1);
+  a.add_bval(5);
+  a.add_bval(10);
 
-  uint8_t* p_a = (uint8_t*)a.test().data();
-  for (int i = 0; i < 10; ++i)
+  printf("%d\n", a.bval_size());
+  uint8_t* p_a = (uint8_t*)a.bval().data();
+  for (int i = 0; i < 9; ++i)
     printf("%d\n", p_a[i]);
 }
